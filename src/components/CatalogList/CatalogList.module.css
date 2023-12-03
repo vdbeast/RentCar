@@ -1,0 +1,23 @@
+.container {
+  width: 1184px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 29px;
+  padding: 0;
+}
+
+.load_more_btn {
+  background-color: #fff;
+  border: none;
+  text-decoration: underline;
+  color: blue;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}

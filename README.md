@@ -1,113 +1,44 @@
-# React homework template
+## Project Name - Rent_Car
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+This is a web application for searching cars with the ability to add them to the favorites list. Users can search for cars using various criteria, add them to their favorites list, and view detailed information about each car. JavaScript was used for development. The framework used was Redux. The database was created using Mockapi.io.
 
-## Создание репозитория по шаблону
+## Project Launch
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+Here are a few steps to run the project on your device:
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+- Clone the repository: `git clone https://github.com/vdbeast/Rent_car.git`
+- Install dependencies: `npm install`
+- Start the server: `npm start`
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+## Project Structure
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+The database is created in Mockapi with the following fields: id, year, make, model, type, img, description, fuelConsumption, engineSize, accessories, functionalities, rentalPrice, rentalCompany, address, rentalConditions, mileage. Regarding the frontend part. Files in the src/ folder are created for source code, public/ - for static resources.
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+## Active Services and API:
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+Axios: Used for making HTTP requests to the server and exchanging data with a remote API. It is used to retrieve and send data to update, create, or delete objects in the respective database.
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
+## Interactions and Requests:
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+Catalog Retrieval: Axios is used to request a catalog of cars from the remote server using the GET method. The received data is processed and displayed on the catalog page.
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
+Interaction with Images: Car images are stored in cloud storage, and their links are added to the respective objects in the database for use on the website.
 
-## Подготовка к работе
+The information received from external services contains car data, including images, model, year, address, and other characteristics.
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+## Limitations and Key Parameters:
 
-## Деплой
+As car data is regularly updated, images and other data may change over time. It is recommended to periodically update the data to have current information.
 
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+## Development Commands
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+Here are a few commands that can be used for development:
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+- `npm start` - start the development server
+- `npm test` - run tests
 
-![GitHub Pages settings](./assets/repo-settings.png)
+Contact Information
+If you have any questions or suggestions, please contact us:
 
-### Статус деплоя
-
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
-
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+- Email: vladimirdrobotun1994@gmail.com
+- GitHub: [vdbeast](https://github.com/vdbeast)

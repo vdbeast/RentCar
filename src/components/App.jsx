@@ -1,16 +1,26 @@
-export const App = () => {
+import { Route, Routes } from "react-router-dom";
+import { appRoutes } from "../constants/routes";
+import Navigation from "./Navigation/Navigation";
+import { Suspense } from "react";
+import Loader from "./Loader/Loader";
+
+const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <header>
+        <Navigation />
+      </header>
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            {appRoutes.map(({ path, element }) => {
+              return <Route key={path} path={path} element={element} />;
+            })}
+          </Routes>
+        </Suspense>
+      </main>
     </div>
   );
 };
+
+export default App;
